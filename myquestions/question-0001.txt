@@ -1,1 +1,36 @@
+Problema: Perfil de Rendimiento por Vendedor
 
+El Problema:
+Tienes un DataFrame con registros de ventas de una empresa. Cada fila
+representa una transacción e incluye información sobre el vendedor,
+el monto de la venta y la fecha en que se realizó. La gerencia necesita
+un resumen del rendimiento de cada vendedor para tomar decisiones
+comerciales.
+
+Tu Misión:
+Escribe una función llamada `calcular_perfil_vendedor(df, vendedor_col,
+monto_col, fecha_col)` que realice lo siguiente:
+
+1. Convierta la columna `fecha_col` a formato datetime si no lo es ya.
+2. Agrupe los datos por `vendedor_col` y calcule para cada vendedor:
+   - `total_ventas`: suma total de los montos.
+   - `promedio_venta`: promedio del monto por transacción, redondeado
+     a 2 decimales.
+   - `num_transacciones`: número total de ventas realizadas.
+   - `mes_mayor_facturacion`: mes (número entero 1-12) en el que el
+     vendedor acumuló el mayor monto total.
+3. Devuelva un DataFrame con las columnas `vendedor`, `total_ventas`,
+   `promedio_venta`, `num_transacciones` y `mes_mayor_facturacion`,
+   ordenado de mayor a menor por `total_ventas`, con el índice
+   reiniciado.
+
+Argumentos:
+- df (pd.DataFrame): DataFrame con los datos de ventas.
+- vendedor_col (str): Nombre de la columna que contiene el vendedor.
+- monto_col (str): Nombre de la columna que contiene el monto.
+- fecha_col (str): Nombre de la columna que contiene la fecha.
+
+Retorna:
+- pd.DataFrame con columnas: `vendedor`, `total_ventas`,
+  `promedio_venta`, `num_transacciones`, `mes_mayor_facturacion`,
+  ordenado descendentemente por `total_ventas` con índice reiniciado.

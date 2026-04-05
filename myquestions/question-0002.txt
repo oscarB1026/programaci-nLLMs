@@ -1,1 +1,35 @@
+Problema: Perfil Estadístico por Grupo
 
+El Problema:
+Tienes un DataFrame con datos de empleados de una empresa. Cada fila
+representa un empleado e incluye su departamento, salario y una
+calificación de desempeño. Necesitas identificar qué tan equilibrada
+es la distribución de valores numéricos dentro de cada departamento
+para tomar decisiones de recursos humanos.
+
+Tu Misión:
+Escribe una función llamada `calcular_perfil_estadistico(df, grupo_col,
+valor_col)` que realice lo siguiente:
+
+1. Agrupe los datos por `grupo_col`.
+2. Para cada grupo calcule las siguientes estadísticas de `valor_col`:
+   - `media`: promedio de los valores, redondeado a 2 decimales.
+   - `mediana`: valor central, redondeado a 2 decimales.
+   - `desviacion_std`: desviación estándar, redondeada a 2 decimales.
+   - `minimo`: valor mínimo.
+   - `maximo`: valor máximo.
+3. Devuelva un DataFrame con esas estadísticas como columnas, usando
+   `grupo_col` como índice, ordenado alfabéticamente por el nombre
+   del grupo.
+
+Argumentos:
+- df (pd.DataFrame): DataFrame con los datos de empleados.
+- grupo_col (str): Nombre de la columna que define los grupos
+  (ej: departamento).
+- valor_col (str): Nombre de la columna numérica a analizar
+  (ej: salario).
+
+Retorna:
+- pd.DataFrame con columnas: `media`, `mediana`, `desviacion_std`,
+  `minimo`, `maximo`, usando `grupo_col` como índice, ordenado
+  alfabéticamente.
